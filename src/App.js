@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import searchIcon from './assets/searchIcon.png';
 import React, { useState, useEffect } from "react";
@@ -37,9 +36,7 @@ const useStyles = makeStyles((theme) => ({
   appBar:{
     backgroundColor:"#2593C0"
   },
-  paper: {
-    padding: 15,
-  },
+ 
   search:{
     flexGrow:1
   },
@@ -66,7 +63,7 @@ function App() {
   // get album photo by id 
 
   const getAlbumPhoto=()=>{
-    if(id!=null&&id!=0){
+    if(id!==null&&id!==0){
       setLoading(true);
     const searchInstance = axios.create(
       {headers: {
@@ -112,7 +109,7 @@ function App() {
                 inputProps={{ 'aria-label': 'naked' }}
                 onChange={(v,e)=>{
                   let id_=v.target.value;
-                  if(id_!=0){
+                  if(id_!==0){
                     setId(id_);
                   }else{
                     setId(null);
@@ -132,7 +129,7 @@ function App() {
                 </Box>
               </Box>
              </Paper>
-             {loading==false&&photos.length==0&&(
+             {loading===false&&photos.length===0&&(
                  <Box mt={10} display="flex" alignItems="center" justifyContent="center">
                    <img src={searchIcon} width={320}/>
                  </Box>
@@ -144,7 +141,7 @@ function App() {
 
                
 
-               {loading==true?
+               {loading===true?
                
                [1,2,3].map((i,m)=>{ 
                  return(
